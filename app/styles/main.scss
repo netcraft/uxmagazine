@@ -62,7 +62,7 @@ h4 {
 }
 
 .hero {
-    height: 790px;
+    height: 700px;
     position: relative;
     text-align: center;
     background: url(../images/hero.jpg) no-repeat 50% 0;
@@ -413,6 +413,31 @@ h4 {
 
             &.current {
                 z-index: 100;
+
+                .text-wrapper {
+                    background: #f2f2f2;
+                }
+
+                .gallery-item:before {
+                    @include border-radius(8px);
+                    content: "";
+                    position: absolute;
+                    top: 40px;
+                    left: 0;
+                    right: 0;
+                    bottom: 10px;
+                    z-index: -1;
+                    box-shadow: 0 0 25px 0 rgba(0,0,0,0.6);
+                }
+
+                // .gallery-item:after {
+                //     bottom: -30px;
+                //     left: -36px;
+                //     width: 462px;
+                //     height: 27px;
+                //     z-index: -1;
+                //     background: url(../images/shadow-wide.png) no-repeat;
+                // }
             }
 
             &:not(.current) .gallery-item {
@@ -422,24 +447,56 @@ h4 {
 
         .gallery-item {
             width: 394px;
-            height: 620px;
+            height: 630px;
             background: #f2f2f2;
-            box-shadow: 0 0 25px 0 rgba(0,0,0,0.5), 0 25px 20px -15px rgba(0,0,0,0.5);
+            perspective: 200;
+            transform-style: preserve-3d;
+            perspective-origin: 50% 0;
             @include transition(transform 250ms, background 250ms);
 
-            figure, figure > img {
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                left: 5%;
+                width: 90%;
+                height: 10px;
+                box-shadow: 0 3px 5px 0 rgba(0,0,0,0.6);
+                background: green;
+                transform: rotateX(45deg);
+                margin: 0 auto;
+            }
+
+            // &:after {
+            //     content: "";
+            //     position: absolute;
+            //     display: block;
+            //     bottom: -24px;
+            //     left: -15px;
+            //     width: 422px;
+            //     height: 25px;
+            //     background: url(../images/shadow.png) no-repeat;
+            // }
+
+            .text-wrapper {
+                height: 367px;
+            }
+
+            figure,
+            figure > img {
                 width: 394px;
                 height: 263px;
             }
 
             h4 {
-                margin: 30px 0;
+                padding: 30px 35px;
+                line-height: 140%;
                 text-align: center;
                 font-size: 22px;
             }
 
             p {
-                padding: 10px;
+                padding: 0 10px;
                 font-size: 14px;
                 font-weight: 300;
                 text-align: center;
@@ -614,12 +671,20 @@ h4 {
 }
 
 .digital-play {
-    height: 920px;
+    height: 500px;
     position: relative;
     overflow: hidden;
-    background: url(../images/digital-play.jpg) no-repeat 50% 0;
-    box-shadow: inset 0 0 20px 0 rgba(0,0,0,0.3);
 
+    .inner-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 920px;
+        background: url(../images/digital-play.jpg) no-repeat 50% 0;
+        box-shadow: inset 0 0 20px 0 rgba(0,0,0,0.3);
+    }
+    
     .inner {
         position: relative;
         height: 100%;
@@ -716,14 +781,6 @@ h4 {
         left: 49%;
     }
 }
-
-// .lior {
-//     height: 1620px;
-//     position: relative;
-//     text-align: center;
-//     background: url(../images/lior.jpg) no-repeat 50% 0;
-//     box-shadow: inset 0 0 20px 0 rgba(0,0,0,0.3);
-// }
 
 .lior {
     height: 500px;
@@ -846,7 +903,7 @@ h4 {
                 background: url(../images/icons.png) no-repeat;
                 position: relative;
                 font-size: 10px;
-                text-indent: -200px;
+                text-indent: -250px;
                 margin: 25px;
                 display: inline-block;
                 overflow: hidden;
