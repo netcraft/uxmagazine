@@ -430,14 +430,14 @@ h4 {
                     box-shadow: 0 0 25px 0 rgba(0,0,0,0.6);
                 }
 
-                // .gallery-item:after {
-                //     bottom: -30px;
-                //     left: -36px;
-                //     width: 462px;
-                //     height: 27px;
-                //     z-index: -1;
-                //     background: url(../images/shadow-wide.png) no-repeat;
-                // }
+                .gallery-item:after {
+                    bottom: -30px;
+                    left: -36px;
+                    width: 462px;
+                    height: 27px;
+                    z-index: -1;
+                    background: url(../images/shadow-wide.png) no-repeat;
+                }
             }
 
             &:not(.current) .gallery-item {
@@ -449,34 +449,34 @@ h4 {
             width: 394px;
             height: 630px;
             background: #f2f2f2;
-            perspective: 200;
-            transform-style: preserve-3d;
-            perspective-origin: 50% 0;
+            // perspective: 200;
+            // transform-style: preserve-3d;
+            // perspective-origin: 50% 0;
             @include transition(transform 250ms, background 250ms);
-
-            &:after {
-                content: "";
-                position: absolute;
-                bottom: -10px;
-                left: 5%;
-                width: 90%;
-                height: 10px;
-                box-shadow: 0 3px 5px 0 rgba(0,0,0,0.6);
-                background: green;
-                transform: rotateX(45deg);
-                margin: 0 auto;
-            }
 
             // &:after {
             //     content: "";
             //     position: absolute;
-            //     display: block;
-            //     bottom: -24px;
-            //     left: -15px;
-            //     width: 422px;
-            //     height: 25px;
-            //     background: url(../images/shadow.png) no-repeat;
+            //     bottom: -10px;
+            //     left: 5%;
+            //     width: 90%;
+            //     height: 10px;
+            //     box-shadow: 0 3px 5px 0 rgba(0,0,0,0.6);
+            //     background: green;
+            //     transform: rotateX(45deg);
+            //     margin: 0 auto;
             // }
+
+            &:after {
+                content: "";
+                position: absolute;
+                display: block;
+                bottom: -24px;
+                left: -15px;
+                width: 422px;
+                height: 25px;
+                background: url(../images/shadow.png) no-repeat;
+            }
 
             .text-wrapper {
                 height: 367px;
