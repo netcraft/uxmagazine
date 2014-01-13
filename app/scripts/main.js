@@ -56,5 +56,45 @@ $(document).ready(function() {
       .end()
       .appendTo("#slideshow");
   },  4000);
+
+  // parallax effect
+  function parallaxImage1() {
+    var scrolled = $(document).scrollTop();
+    var screenHeight = $(document).height();
+
+    var percentScrolled = scrolled / screenHeight;
+    var remainingImageHeight = 516;
+
+    if (scrolled > 6000 && scrolled < 8200) {
+      var percent = (8200 - scrolled) / 2200;
+      $(".teaching .inner-image").css("top", -(percent * remainingImageHeight) + 100 + "px");
+    }
+  }
+
+  function parallaxImage2() {
+    var scrolled = $(document).scrollTop();
+    var screenHeight = $(document).height();
+
+    var percentScrolled = scrolled / screenHeight;
+    var remainingImageHeight = 1120;
+
+    if (scrolled > 12000 && scrolled < screenHeight) {
+      var percent = (screenHeight - scrolled) / (screenHeight - 12000);
+      //console.log("percent  " + percent);
+      $(".lior .inner-image").css("top", -(percent * remainingImageHeight) + "px");
+    }
+  }
+
+  $(window).on("scroll", function(event){
+    parallaxImage1();
+    parallaxImage2();
+
+    // var scrolled = $(document).scrollTop();
+    // var screenHeight = $(document).height();
+    // console.log("scrolled " + scrolled);
+    // console.log("screenHeight" + screenHeight);
+    // console.log(screenHeight-scrolled);
+    // console.log(scrolled / screenHeight);
+  });
  
 });

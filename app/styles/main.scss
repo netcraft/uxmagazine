@@ -508,11 +508,19 @@ h4 {
 }
 
 .teaching {
-    height: 966px;
+    height: 450px;
     position: relative;
-    text-align: center;
-    background: url(../images/teaching.jpg) no-repeat 50% 0;
-    box-shadow: inset 0 0 20px 0 rgba(0,0,0,0.3);
+    overflow: hidden;
+
+    .inner-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 966px;
+        background: url(../images/teaching.jpg) no-repeat 50% 0;
+        box-shadow: inset 0 0 20px 0 rgba(0,0,0,0.3);
+    }
 }
 
 .learning {
@@ -709,12 +717,28 @@ h4 {
     }
 }
 
+// .lior {
+//     height: 1620px;
+//     position: relative;
+//     text-align: center;
+//     background: url(../images/lior.jpg) no-repeat 50% 0;
+//     box-shadow: inset 0 0 20px 0 rgba(0,0,0,0.3);
+// }
+
 .lior {
-    height: 1620px;
+    height: 500px;
     position: relative;
-    text-align: center;
-    background: url(../images/lior.jpg) no-repeat 50% 0;
-    box-shadow: inset 0 0 20px 0 rgba(0,0,0,0.3);
+    overflow: hidden;
+
+    .inner-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1620px;
+        background: url(../images/lior.jpg) no-repeat 50% 0;
+        box-shadow: inset 0 0 20px 0 rgba(0,0,0,0.3);
+    }
 }
 
 .site-footer {
