@@ -226,12 +226,23 @@ module.exports = function (grunt) {
         // The following *-min tasks produce minified files in the dist folder
         imagemin: {
             dist: {
+                options: {
+                    cache: false,
+                    optimizationLevel: 7,
+                    pngquant: true
+                },
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.app %>/images',
                     src: '{,*/}*.{gif,jpeg,jpg,png}',
                     dest: '<%= yeoman.dist %>/images'
                 }]
+            }
+        },
+        smushit: {
+            mygroup: {
+                src: ['<%= yeoman.app %>/images/**/*.*'],
+                dest: '<%= yeoman.dist %>/images'
             }
         },
         svgmin: {
@@ -344,7 +355,8 @@ module.exports = function (grunt) {
             dist: [
                 'compass',
                 'copy:styles',
-                'imagemin',
+                //'imagemin',
+                'smushit',
                 'svgmin'
             ]
         }
