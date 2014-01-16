@@ -44,6 +44,18 @@ $(document).ready(function() {
   var owl = $(".owl-carousel").data('owlCarousel');
   owl.goTo(1);
 
+  // $(".gallery-item").on("click", function(event){
+  //   var $this = $(this);
+  //   var galleryItems = $(".gallery-item");
+
+  //   for (var i = 0; i < galleryItems.length; i++) {
+  //     console.log(galleryItems[i]);
+  //     console.log($this);
+  //     if (galleryItems[i] === $this) {
+  //       console.log(i);
+  //     }
+  //   };
+  // });
 
   // experience slideshow
   $("#slideshow > img:gt(0)").hide();
@@ -67,7 +79,7 @@ $(document).ready(function() {
 
     if (scrolled > 6000 && scrolled < 8200) {
       var percent = (8200 - scrolled) / 2200;
-      $(".teaching .inner-image").css("top", -(percent * remainingImageHeight) + 120 + "px");
+      $(".teaching .inner-image").css("top", -(percent * remainingImageHeight) + 50 + "px");
     }
   }
 
@@ -81,7 +93,7 @@ $(document).ready(function() {
 
     if (scrolled > 11400 && scrolled < screenHeight) {
       var percent = (screenHeight - scrolled) / (screenHeight - 11400);
-      $(".lior .inner-image").css("top", -(percent * remainingImageHeight) + "px");
+      $(".lior .inner-image").css("top", -(percent * remainingImageHeight) + 100 + "px");
     }
   }
 
